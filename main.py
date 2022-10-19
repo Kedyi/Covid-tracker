@@ -32,9 +32,12 @@ def get_country_data():
     # print(info_div)
     all_data = ""
     for block in info_div:
+     try:
         text = block.find("h1", class_=None).get_text()
         count = block.find("span", class_=None).get_text()
         all_data = all_data + text + " " + count + "\n"
+     except:
+         print("error")
     mainlabel['text']=all_data
 
 
